@@ -9,6 +9,9 @@
       body{
          font-family: sans-serif;
          color: indigo;
+         text-align: center;
+         font-size: 35px;
+         
       }
 
       button{
@@ -17,7 +20,8 @@
          color: inherit;
          padding: 8px 16px;
          transition: 0.5s;
-         animation: spin 1s;
+         font-size: 35px;
+         font-weight: 500;
       }
 
       button:hover {
@@ -26,7 +30,7 @@
       }
 
       #scoreboard {
-         font-size: 32px;
+         font-size: 50px;
          background: powderblue;
          width: fit-content;
          padding: 8px 16px;
@@ -37,14 +41,35 @@
 
       }
 
-      /*@keyframes spin {
+      @keyframes spin {
          from {
             rotate: 0deg;
          }
          to {
             rotate: 360deg;
          }
-      }*/
+      }
+
+      @keyframes shake {
+         0% {
+            translate: 0%;
+         }
+         20%{
+            translate:-10%;
+         }
+         40%{
+            translate: 10%;
+         }
+         60%{
+            translate: -10%
+         }
+         80%{
+            translate: 10%;
+         }
+         100% {
+            translate: 0%;
+         }
+      }
     </style>
  </head>
  <body>
@@ -75,7 +100,7 @@
           let question = button.closest('.question');
           let buttons = question.querySelectorAll('button');
           currentIndex++;
-          setTimeout(showNextQuestion, 3000)
+          setTimeout(showNextQuestion, 1000)
           
 
            for(let button of buttons) {
@@ -85,9 +110,11 @@
            if (button.classList.contains("correct")){
              scoreboard.textContent++;
              button.style.background = "turquoise";
+             button.style.animation = 'spin 1s';
            } else {
              button.style.background = "deeppink";
              button.style.color = "white"
+             button.style.animation = 'shake .5s';
            }
         }
 
