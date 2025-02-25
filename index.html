@@ -6,12 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
       body{
          font-family: sans-serif;
          color: indigo;
          text-align: center;
-         font-size: 35px;
-         
+         font-size: 20px;
+         background: url();
+         /* background-size: cover; */
+         /* overflow: hidden; */
+      }
+
+      #shuffle {
+        height: 75vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h1 {
+       font-family: "Monoton", serif;
+       font-weight: 400;
+       font-style: normal;
+       font-size: 80px;
+       position: fixed;
+       top: 0px;
+       right: 0px;
+       left: 0px;
       }
 
       button{
@@ -20,7 +41,7 @@
          color: inherit;
          padding: 8px 16px;
          transition: 0.5s;
-         font-size: 35px;
+         font-size: 20px;
          font-weight: 500;
       }
 
@@ -76,7 +97,8 @@
     <h1>The Musical Quiz</h1>
 
 
-    <div id="shuffle">
+
+    <div id="shuffle"> 
     <div class="question">
     <h2>What musical did Steven Spielberg make into a movie in 2020?</h2>
      <button onclick=" check(this)">Gypsy</button>
